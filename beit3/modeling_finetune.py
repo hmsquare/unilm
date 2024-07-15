@@ -305,6 +305,24 @@ def beit3_large_patch16_224_nlvr2(pretrained=False, **kwargs):
 
 
 @register_model
+def beit3_base_patch16_224_vqav2(pretrained=False, **kwargs):
+    args = _get_large_config(img_size=224, **kwargs)
+    args.normalize_output = False
+    model = BEiT3ForVisualQuestionAnswering(args, num_classes=3129, **kwargs)
+    return model
+
+
+
+@register_model
+def beit3_base_indomain_patch16_224_vqav2(pretrained=False, **kwargs):
+    args = _get_large_config(img_size=224, **kwargs)
+    args.normalize_output = False
+    model = BEiT3ForVisualQuestionAnswering(args, num_classes=3129, **kwargs)
+    return model
+
+
+
+@register_model
 def beit3_base_patch16_384_vqav2(pretrained=False, **kwargs):
     args = _get_base_config(img_size=384, **kwargs)
     args.normalize_output = False
