@@ -326,7 +326,8 @@ def beit3_base_indomain_patch16_224_vqav2(pretrained=False, **kwargs):
 def beit3_base_patch16_384_vqav2(pretrained=False, **kwargs):
     args = _get_base_config(img_size=384, **kwargs)
     args.normalize_output = False
-    model = BEiT3ForVisualQuestionAnswering(args, num_classes=3129, **kwargs)
+    # model = BEiT3ForVisualQuestionAnswering(args, num_classes=3129, **kwargs)
+    model = BEiT3ForVisualQuestionAnswering(args, num_classes=5206, **kwargs)
     return model
 
 
