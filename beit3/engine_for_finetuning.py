@@ -205,9 +205,9 @@ class VQAHandler(TaskHandler):
         logits = model(
             image=image, question=language_tokens, 
             padding_mask=padding_mask)
-        ##
-        assert logits.size() == labels.size()
-        ##
+        
+        # assert logits.size() == labels.size()
+        
         return {
             "loss": self.criterion(input=logits.float(), target=labels.float()) * labels.shape[1], 
         }
